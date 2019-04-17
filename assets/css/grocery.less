@@ -1,0 +1,346 @@
+/* ==========================================================================
+   Normalize
+   ========================================================================== */
+@import (once) "normalize";
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+@grey-dark: #222;
+@grey: #b3b3b3;
+@grey-light: #f2f5f1;
+@grey-light-hover: #e1e4e0;
+@grey-mid: #b3b3b3;
+@grey-mid-hover: #787878;
+@green: #32a90b;
+@green-hover: #2a750b;
+
+html {
+  color: @grey-dark;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+body {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 22px;
+  line-height: 1.375rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   Grids
+   ========================================================================== */
+#global_container {
+  overflow: hidden;
+  position: relative;
+}
+
+#mc {
+  display: block;
+  padding: 20px 0 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.visuallyhidden {
+  position: absolute;
+  border: 0;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  display: inline-block;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+h1 {
+  font-size: 43px;
+  font-size: 2.6875rem;
+  font-weight: 600;
+  line-height: 56px;
+  line-height: 3.5rem;
+  margin-bottom: 20px
+}
+
+h1,
+h2 {
+  font-family: 'Roboto', Arial, Helvetica, Verdana, sans-serif;
+  margin-top: 0;
+  text-transform: none
+}
+
+h2 {
+  font-size: 25px;
+  font-size: 1.5625rem;
+  font-weight: 400;
+  line-height: 38px;
+  line-height: 2.375rem;
+  margin-bottom: 10px
+}
+
+h3,
+h4,
+p {
+  font-family: 'Roboto', Arial, Helvetica, Verdana, sans-serif;
+  font-size: 15px;
+  font-size: .9375rem;
+  font-weight: 700;
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.cursive {
+  font-family: 'Lobster', cursive;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.header-row {
+  background-color: @green;
+  color: white;
+  height: auto;
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+  }
+
+  i {
+    align-content: center;
+    display: flex;
+    height: 53px;
+    width: 188px;
+    margin: 0 auto;
+
+    img {
+      flex: 0 1 auto;
+      height: auto !important;
+      max-width: 100%;
+      width: auto !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  p {
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Icons
+   ========================================================================== */
+i {
+  display: inline-block;
+  font-size: 0;
+  font-style: normal;
+  line-height: 0;
+  vertical-align: middle;
+
+  & > svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* ==========================================================================
+   Grocery Widget
+   ========================================================================== */
+#groceries {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+
+  .grocery-category {
+    min-width: 300px;
+    margin: 10px;
+    background-color: @grey-light;
+
+    h3,
+    h4 {
+      padding: 0 20px;
+    }
+
+    .title {
+      background-color: @green;
+      padding: 15px 0;
+      margin-bottom: 20px;
+      color: white;
+
+      h3 {
+        text-transform: capitalize;
+        margin-bottom: 0;
+        font-size: 20px;
+        font-size: 1.25rem;
+        text-align: right;
+      }
+
+      i {
+        height: 35px;
+        width: 35px;
+        float: left;
+        padding-left: 20px;
+        position: relative;
+        top: -5px;
+
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    h4 {
+      text-transform: capitalize;
+
+      &:before {
+        text-transform: uppercase;
+        color: @green;
+        width: 50px;
+        display: inline-block;
+        text-align: right;
+        margin-right: 20px;
+      }
+
+      &:after {
+        content: '...';
+        display: inline-block;
+        float: right;
+        width: 26px;
+        border-radius: 50px 50px 50px 50px;
+        text-align: center;
+        border: 2px solid @grey-mid;
+        color: @grey-mid;
+      }
+
+      &:first-of-type {
+        &:before {
+          content: 'Name ';
+        }
+      }
+      &:nth-of-type(2) {
+        &:before {
+          content: 'Type ';
+        }
+      }
+      &:nth-of-type(3) {
+        &:before {
+          content: 'Brand ';
+        }
+      }
+      &:nth-of-type(4) {
+        &:before {
+          content: 'Qty ';
+        }
+      }
+    }
+
+    &:hover {
+      background-color: @grey-light-hover;
+      cursor: pointer;
+
+      .title {
+        background-color: @green-hover;
+      }
+
+      h4 {
+        &:before {
+          color: @green-hover;
+        }
+
+        &:after {
+          border: 2px solid @grey-mid-hover;
+          color: @grey-mid-hover;
+        }
+      }
+    }
+  }
+}
+
+.add-item {
+  margin: 40px auto;
+  width: 260px;
+  height: 25px;
+  font-size: 52px;
+  font-size: 3.25rem;
+  font-family: 'Roboto', Arial, Helvetica, Verdana, sans-serif;
+  background-color: white;
+  color: @green;
+  text-align: center;
+  border: 2px solid @green;
+  display: block;
+  padding: 20px;
+
+  &:hover {
+    background-color: @grey-light;
+    color: @green-hover;
+    border: 2px solid @green-hover;
+  }
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  //
+  //body {
+  //  width: 100%;
+  //}
+  #groceries {
+    .grocery-category {
+
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  #groceries {
+    .grocery-category {
+
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  #groceries {
+    .grocery-category {
+
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+
+  #groceries {
+    .grocery-category {
+
+    }
+  }
+}
